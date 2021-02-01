@@ -15,7 +15,7 @@ addFood(steak[0], '#steak', () => {
           addFood(steak[5], '#steak', () => {
             addFood(steak[6], '#steak', () => {
               addFood(steak[7], '#steak', () => {
-
+                document.querySelector('.steak').classList.remove('hide');
               })
             })
           })
@@ -29,12 +29,15 @@ addFood(steak[0], '#steak', () => {
 
 // Iteration 2 using `.then()`
 addFood(mashPotatoes[0], '#mashPotatoes').then(() => {
-   addFood(mashPotatoes[1], '#mashPotatoes').then(() => {
-      addFood(mashPotatoes[2], '#mashPotatoes').then(() => {
-        addFood(mashPotatoes[3], '#mashPotatoes').then(() => {
-          addFood(mashPotatoes[4], '#mashPotatoes')
-       });
+  addFood(mashPotatoes[1], '#mashPotatoes').then(() => {
+    addFood(mashPotatoes[2], '#mashPotatoes').then(() => {
+      addFood(mashPotatoes[3], '#mashPotatoes').then(() => {
+        addFood(mashPotatoes[4], '#mashPotatoes').then(() =>
+          document.querySelector('.potatoes').classList.remove('hide')
+        );
+      });
     });
+    
   });
 });
 
@@ -42,20 +45,10 @@ addFood(mashPotatoes[0], '#mashPotatoes').then(() => {
 
 // Iteration 3 using async and await
 
-  async function makeFood(step, brusselSprouts) {
-    try {
-      const eachStep = await addFood(step, brusselSprouts);
-      return eachStep;
-    } 
-  }
-  makeFood(eachStep);
-
-
-//   async function getNumber() {
-//     try {
-//         const number = await createRandomNumber(4);
-//         console.log(number);
-//     } catch (error) {
-//         console.log('The following error has ocurred: ', error.message);
-//     }
-// }
+  // async function makeFood(step, brusselSprouts) {
+  //   try {
+  //     const eachStep = await addFood(brusselSprouts[step], '#brusselSprouts');
+  //     return eachStep;
+  //   } 
+  // }
+  // makeFood(eachStep);

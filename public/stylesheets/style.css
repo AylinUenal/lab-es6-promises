@@ -6,6 +6,10 @@ img {
   width: 200px;
 }
 
+.hide {
+  display: none;
+}
+
 li {
   font-size: 16px;
   line-height: 1.5rem;
